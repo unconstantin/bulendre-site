@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Customer Behavior - Data Analyst Portfolio</title>
+    <title>Wish Summer Products Analysis - Data Analyst Portfolio</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -11,9 +11,10 @@
         <div class="container">
             <div class="header-content">
                 <div class="brand">
-                    <h1>Fashion Analytics Portfolio</h1>
-                    <p class="subtitle">Transforming data into insights</p>
-                </div>
+                     <h1 class="logo">bulendre</h1>
+                         <p class="subtitle">They’re just clothes. Let’s look at the data.</p>
+                    </div>
+
                 <nav>
                     <a href="../index.html">Home</a>
                     <a href="../about.html">About</a>
@@ -27,61 +28,126 @@
         <article class="analysis-page">
             <div class="analysis-header">
                 <div class="tags-row">
-                    <span class="tag">Python</span>
-                    <span class="tag">EDA</span>
-                    <span class="tag">Pandas</span>
-                </div>
-                <h2>E-Commerce Customer Behavior Analysis</h2>
-                <p class="date">📅 March 2024 · ⏱️ 8 min read</p>
+    <span class="tag">SQL</span>
+    <span class="tag">Power BI</span>
+    <span class="tag">E-commerce</span>
+</div>
+
+                <h2>Wish: Can Cheap Go Global?</h2>
+                <p class="date">📅 November 2025 · ⏱️ 8 min read</p>
             </div>
             
             <section class="analysis-section">
                 <h3>Objective</h3>
-                <p>This analysis examines customer purchasing patterns in an e-commerce dataset to identify key behavior segments and uncover opportunities for targeted marketing strategies. The goal is to understand what drives customer value and how to optimize retention efforts.</p>
+                <p>
+                    This project analyzes <strong>Wish</strong>, a global e-commerce platform, through its summer 2020 product catalogue. 
+                    The main goal is to understand whether Wish’s <strong>low-price strategy</strong> really pays off, how <strong>trustworthy</strong> the platform is, 
+                    and whether it still needs additional <strong>advertising</strong> to grow.
+                </p>
             </section>
             
             <section class="analysis-section">
                 <h3>Dataset</h3>
-                <p>The dataset contains transaction records from an online retail store, including customer IDs, purchase dates, product information, and transaction values.</p>
+                <p>
+                    The dataset contains summer products sold on Wish in August 2020, including product information, prices, ratings, 
+                    shipping coverage and advertising flags.
+                </p>
                 <div class="info-box">
-                    <p><strong>📊 Source:</strong> <a href="https://www.kaggle.com/datasets/example" target="_blank">Kaggle E-Commerce Dataset</a></p>
-                    <p><strong>📝 Records:</strong> 50,000+ transactions</p>
-                    <p><strong>📆 Period:</strong> January 2023 - December 2023</p>
+                    <p><strong>📊 Source:</strong> Wish Summer Products 2020 dataset (Kaggle)</p>
+                    <p><strong>📝 Records:</strong> ~1,500 products</p>
+                    <p><strong>🛠 Tools:</strong> SQL (data preparation) &amp; Power BI (visual analysis)</p>
                 </div>
+                <p>
+                    Using Python, I first checked for missing values and removed several columns with more than 90% nulls
+                    (for example urgency banners and profile pictures). Then I created new features such as:
+                </p>
+                <ul>
+                    <li><strong>Price ranges</strong> (1–10 €, 11–20 €, 21–30 €, 31–49 €, 50+ €)</li>
+                    <li><strong>Product categories</strong> based on keywords in the description</li>
+                    <li><strong>Shipping reach</strong> (niche, popular, mainstream, global) based on number of countries</</li>
+                    <li>Categorical versions of boolean fields like <em>uses_ads_boosts</em> and <em>shipping_is_express</em></li>
+                </ul>
             </section>
             
             <section class="analysis-section">
                 <h3>Main Insights</h3>
                 <ul class="insights-list">
-                    <li><strong>Revenue Concentration:</strong> High-value customers (top 20%) contribute 65% of total revenue</li>
-                    <li><strong>Peak Activity:</strong> Purchasing activity peaks between 10 AM and 2 PM on weekdays</li>
-                    <li><strong>Retention Challenge:</strong> Customer retention rate drops significantly after the first 90 days</li>
-                    <li><strong>Seasonal Patterns:</strong> Product categories show distinct seasonal patterns in demand</li>
-                    <li><strong>Cart Abandonment:</strong> Highest abandonment rate for items priced between $50-$100</li>
+                    <li>
+                        <strong>Low prices drive massive volume.</strong>  
+                        Products in the <strong>1–10 €</strong> price range generated over <strong>5 million units sold</strong>, 
+                        making this the most profitable tier in absolute terms.
+                    </li>
+                    <li>
+                        <strong>Trust is built through reviews, not perfection.</strong>  
+                        None of the top merchants reached a perfect 5/5 rating, but several achieved very high scores backed by 
+                        <strong>100+ reviews</strong>, which indicates a generally reliable marketplace.
+                    </li>
+                    <li>
+                        <strong>Price ≠ quality, but it helps.</strong>  
+                        Higher-priced products tend to receive better ratings on average, but the cheapest items still perform surprisingly well, 
+                        coming close to mid-range products in terms of customer satisfaction.
+                    </li>
+                    <li>
+                        <strong>Global reach with a long tail of niche products.</strong>  
+                        Products are shipped to between <strong>6 and 140 countries</strong>. Even though only a small group is truly “global” 
+                        (100+ countries), niche and popular items also achieve strong sales.
+                    </li>
+                    <li>
+                        <strong>Limited impact of ads.</strong>  
+                        Only a small share of products use ads, and they do not show a clear advantage in either ratings or units sold, 
+                        suggesting that advertising brings limited additional value in this snapshot of the platform.
+                    </li>
                 </ul>
             </section>
             
             <section class="analysis-section">
                 <h3>Conclusions</h3>
-                <p>The analysis reveals clear customer segmentation opportunities. Implementing targeted retention strategies for new customers and optimizing product recommendations for high-value segments could significantly improve overall revenue.</p>
-                <p>Key recommendations include developing a loyalty program for high-value customers, implementing abandoned cart recovery campaigns for mid-price items, and creating targeted onboarding sequences to improve 90-day retention rates.</p>
-                <p class="next-steps"><strong>Next Steps:</strong> Further investigation into cart abandonment causes and seasonal demand patterns is recommended for developing more precise marketing campaigns.</p>
+                <p>
+                    The analysis was guided by three key questions: <strong>Is Wish’s low-price strategy effective?</strong>, 
+                    <strong>Can the platform be trusted?</strong>, and <strong>Does it still need more advertising?</strong>
+                </p>
+                <p>
+                    The results show that the <strong>low-price strategy clearly works</strong>: most sales happen in the lowest price range, 
+                    and customers are still fairly satisfied with these products. When it comes to trust, merchants with many reviews and 
+                    good ratings provide a solid signal for buyers, even if no one reaches a perfect score.
+                </p>
+                <p>
+                    Finally, the platform appears to have already achieved <strong>strong global reach</strong>. Products are shipped worldwide, 
+                    and advertising does not seem to significantly change performance in this dataset. This suggests that Wish is already in 
+                    a <strong>mature stage</strong>, where organic visibility and price positioning play a bigger role than paid promotion.
+                </p>
+                <p class="next-steps">
+                    <strong>Next Steps:</strong> a natural extension of this project would be to add predictive models for demand, 
+                    or to build customer and product segments to support more targeted strategies.
+                </p>
             </section>
             
             <section class="analysis-section">
+                <h3>Recommendations</h3>
+                <ul>
+                    <li><strong>Expand express shipping</strong> to regions outside China to improve delivery speed and user experience.</li>
+                    <li><strong>Diversify product origins</strong> to include more non-Chinese manufacturers and increase perceived quality and trust.</li>
+                    <li><strong>Introduce local warehouses</strong> in major regions (e.g. Europe, North America) to reduce shipping times and costs.</li>
+                    <li><strong>Add clearer product categories</strong> instead of relying only on keyword search, improving navigation for new users.</li>
+                </ul>
+            </section>
+
+            <section class="analysis-section">
                 <h3>Interactive Dashboard</h3>
-                <p>Explore the complete analysis through the interactive Power BI dashboard below:</p>
+                <p>
+                    Explore the full analysis through the interactive Power BI dashboard below.  
+                    The report summarises merchant reliability, price ranges, global reach, and the impact of advertising.
+                </p>
+
                 <div class="powerbi-embed">
-                    <iframe 
-                        title="E-Commerce Analysis Dashboard" 
-                        src="YOUR_POWERBI_EMBED_LINK_HERE" 
-                        frameborder="0" 
-                        allowFullScreen="true">
+                    <iframe
+                        title="Wish Summer Products 2020 Dashboard"
+                        width="100%"
+                        height="800"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiN2JhNjcxYWItMTZjZi00NGVmLTk2MWEtYjk0NzI5NTk3NmY4IiwidCI6IjJhZjUzNDlhLTc1MTktNDgyNy1iYjUwLTI2ZTVhMzQxNzcwYSIsImMiOjl9"
+                        frameborder="0"
+                        allowfullscreen="true">
                     </iframe>
-                    <div class="embed-placeholder">
-                        <p>📊 Power BI Dashboard</p>
-                        <p class="embed-note">Replace YOUR_POWERBI_EMBED_LINK_HERE with your actual Power BI embed URL</p>
-                    </div>
                 </div>
             </section>
 
@@ -97,5 +163,4 @@
         </div>
     </footer>
 </body>
-
 </html>
