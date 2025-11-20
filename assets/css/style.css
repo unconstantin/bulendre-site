@@ -746,6 +746,49 @@ footer p {
 }
 
 /* ========================================
+   MOBILE LANDSCAPE TWEAKS
+   ======================================== */
+
+@media (max-width: 900px) and (orientation: landscape) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .brand h1 {
+        font-size: 1.125rem;
+    }
+
+    .subtitle {
+        display: none; /* ascundem motto-ul ca să câștigăm înălțime */
+    }
+
+    nav a {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    main {
+        padding: var(--spacing-md) 0;
+    }
+
+    .powerbi-embed {
+        padding-bottom: 0;
+        height: 70vh; /* dashboard mai înalt în landscape */
+        border-width: 1px;
+    }
+
+    .powerbi-embed iframe {
+        height: 100%;
+    }
+}
+
+/* ========================================
    UTILITIES
    ======================================== */
 
@@ -812,4 +855,5 @@ footer p {
         color: var(--color-text);
         text-decoration: underline;
     }
+
 }
