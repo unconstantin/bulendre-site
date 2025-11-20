@@ -131,20 +131,37 @@ strong {
    ======================================== */
 
 header {
-    background-color: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
-    padding: var(--spacing-lg) 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
+
+    /* bară mai subțire */
+    padding: 0.5rem 0 0rem;
+
+    /* aero / glass effect */
+    background-color: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.7);
 }
+
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-lg);
+}
+
+.brand-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* puțin mai mic pe mobile foarte mici */
+@media (max-width: 480px) {
+    .brand-logo {
+        height: 26px;
+    }
 }
 
 .brand h1 {
@@ -154,9 +171,12 @@ header {
 }
 
 .subtitle {
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-    margin: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    margin-top: 0.2rem;
 }
 
 nav {
@@ -242,6 +262,14 @@ main {
     gap: var(--spacing-lg);
 }
 
+/* link care cuprinde cardul – face cardul clicabil */
+.analysis-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* cardul în sine */
 .analysis-card {
     background-color: var(--color-background);
     border: 1px solid var(--color-border);
@@ -252,6 +280,7 @@ main {
     overflow: hidden;
 }
 
+/* bara colorată de sus */
 .analysis-card::before {
     content: '';
     position: absolute;
@@ -265,13 +294,14 @@ main {
     transition: transform 0.3s ease;
 }
 
-.analysis-card:hover {
+/* hover pe link, nu direct pe card */
+.analysis-card-link:hover .analysis-card {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
 }
 
-.analysis-card:hover::before {
+.analysis-card-link:hover .analysis-card::before {
     transform: scaleX(1);
 }
 
@@ -430,6 +460,18 @@ main {
 /* ========================================
    CONTACT GRID
    ======================================== */
+
+   .brand-link {
+    display: inline-block;
+}
+
+.brand-link:hover {
+    opacity: 0.9;          /* mic feedback la hover */
+}
+
+.brand-link img {
+    display: block;        /* elimină spațiul sub imagine */
+}
 
 .contact-grid {
     display: grid;
@@ -701,6 +743,7 @@ footer p {
     .container {
         padding: 0 var(--spacing-sm);
     }
+
     header {
         padding: var(--spacing-md) 0;
     }
@@ -854,6 +897,4 @@ footer p {
         color: var(--color-text);
         text-decoration: underline;
     }
-
 }
-

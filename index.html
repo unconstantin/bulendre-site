@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analyst Portofolio</title>
+    <title>BULENDRE - Home</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -11,9 +11,12 @@
         <div class="container">
             <div class="header-content">
                 <div class="brand">
-                    <h1 class="logo">bulendre</h1>
-                     <p class="subtitle">They’re just clothes. Let’s look at the data.</p>
-                        </div>
+    <a href="index.html" class="brand-link">
+        <img src="assets/logo.svg" alt="bulendre" class="brand-logo">
+    </a>
+    <p class="subtitle">They’re just clothes. Let’s look at the data.</p>
+</div>
+
 
                 <nav>
                     <a href="index.html" class="active">Home</a>
@@ -31,29 +34,28 @@
         </section>
 
         <section class="analyses-grid">
-            <article class="analysis-card">
-    <div class="tags-row">
-        <span class="tag">SQL</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">E-commerce</span>
-    </div>
+            <!-- Cardul întreg este acum clicabil -->
+            <a href="analyses/first-analysis.html" class="analysis-card-link">
+                <article class="analysis-card">
+                    <div class="card-header">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">E-commerce</span>
+                    </div>
 
-    <h3>Wish: Can Cheap Go Global?</h3>
-    <p class="card-date">November 2025</p>
+                    <h3>Wish: Can Cheap Go Global?</h3>
+                    <span class="date">November 2025</span>
 
-    <p class="card-description">
-        Analysis of Wish’s summer 2020 products to understand how low prices,
-        product quality, and global reach influence customer behavior and sales performance.
-    </p>
+                    <p class="description">
+                        Analysis of Wish’s summer 2020 products to understand how low prices,
+                        product quality, and global reach influence customer behavior and sales performance.
+                    </p>
 
-    <a href="analyses/first-analysis.html" class="card-link">
-        Read analysis →
-    </a>
-</article>
+                    <span class="read-more">Read analysis →</span>
+                </article>
+            </a>
 
-
-            <!-- Add more analyses here by copying the article.analysis-card structure -->
-            
+            <!-- Când mai adaugi proiecte, duplică structura <a> ... </a> de mai sus -->
         </section>
     </main>
 
@@ -63,6 +65,4 @@
         </div>
     </footer>
 </body>
-
 </html>
-
