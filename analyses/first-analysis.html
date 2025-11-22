@@ -1,1 +1,170 @@
-<!doctype html><meta http-equiv="refresh" content="0; url=/analyses/first-analysis/">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish Summer Products Analysis</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+    <a href="../index.html" class="brand-link">
+        <img src="../assets/logo.svg" alt="bulendre" class="brand-logo">
+    </a>
+    <p class="subtitle">They’re just clothes. Let’s look at the data.</p>
+</div>
+
+
+
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="analysis-page">
+            <div class="analysis-header">
+                <div class="tags-row">
+    <span class="tag">SQL</span>
+    <span class="tag">Power BI</span>
+    <span class="tag">E-commerce</span>
+</div>
+
+                <h2>Wish: Can Cheap Go Global?</h2>
+                <p class="date">📅 November 2025 · ⏱️ 8 min read</p>
+            </div>
+            
+            <section class="analysis-section">
+                <h3>Objective</h3>
+                <p>
+                    This project analyzes <strong>Wish</strong>, a global e-commerce platform, through its summer 2020 product catalogue. 
+                    The main goal is to understand whether Wish’s <strong>low-price strategy</strong> really pays off, how <strong>trustworthy</strong> the platform is, 
+                    and whether it still needs additional <strong>advertising</strong> to grow.
+                </p>
+            </section>
+            
+            <section class="analysis-section">
+                <h3>Dataset</h3>
+                <p>
+                    The dataset contains summer products sold on Wish in August 2020, including product information, prices, ratings, 
+                    shipping coverage and advertising flags.
+                </p>
+                <div class="info-box">
+                    <p><strong>📊 Source:</strong> Wish Summer Products 2020 dataset (Kaggle)</p>
+                    <p><strong>📝 Records:</strong> ~1,500 products</p>
+                    <p><strong>🛠 Tools:</strong> SQL (data preparation) &amp; Power BI (visual analysis)</p>
+                </div>
+                <p>
+                    Using Python, I first checked for missing values and removed several columns with more than 90% nulls
+                    (for example urgency banners and profile pictures). Then I created new features such as:
+                </p>
+                <ul>
+                    <li><strong>Price ranges</strong> (1–10 €, 11–20 €, 21–30 €, 31–49 €, 50+ €)</li>
+                    <li><strong>Product categories</strong> based on keywords in the description</li>
+                    <li><strong>Shipping reach</strong> (niche, popular, mainstream, global) based on number of countries</</li>
+                    <li>Categorical versions of boolean fields like <em>uses_ads_boosts</em> and <em>shipping_is_express</em></li>
+                </ul>
+            </section>
+            
+            <section class="analysis-section">
+                <h3>Main Insights</h3>
+                <ul class="insights-list">
+                    <li>
+                        <strong>Low prices drive massive volume.</strong>  
+                        Products in the <strong>1–10 €</strong> price range generated over <strong>5 million units sold</strong>, 
+                        making this the most profitable tier in absolute terms.
+                    </li>
+                    <li>
+                        <strong>Trust is built through reviews, not perfection.</strong>  
+                        None of the top merchants reached a perfect 5/5 rating, but several achieved very high scores backed by 
+                        <strong>100+ reviews</strong>, which indicates a generally reliable marketplace.
+                    </li>
+                    <li>
+                        <strong>Price ≠ quality, but it helps.</strong>  
+                        Higher-priced products tend to receive better ratings on average, but the cheapest items still perform surprisingly well, 
+                        coming close to mid-range products in terms of customer satisfaction.
+                    </li>
+                    <li>
+                        <strong>Global reach with a long tail of niche products.</strong>  
+                        Products are shipped to between <strong>6 and 140 countries</strong>. Even though only a small group is truly “global” 
+                        (100+ countries), niche and popular items also achieve strong sales.
+                    </li>
+                    <li>
+                        <strong>Limited impact of ads.</strong>  
+                        Only a small share of products use ads, and they do not show a clear advantage in either ratings or units sold, 
+                        suggesting that advertising brings limited additional value in this snapshot of the platform.
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="analysis-section">
+                <h3>Conclusions</h3>
+                <p>
+                    The analysis was guided by three key questions: <strong>Is Wish’s low-price strategy effective?</strong>, 
+                    <strong>Can the platform be trusted?</strong>, and <strong>Does it still need more advertising?</strong>
+                </p>
+                <p>
+                    The results show that the <strong>low-price strategy clearly works</strong>: most sales happen in the lowest price range, 
+                    and customers are still fairly satisfied with these products. When it comes to trust, merchants with many reviews and 
+                    good ratings provide a solid signal for buyers, even if no one reaches a perfect score.
+                </p>
+                <p>
+                    Finally, the platform appears to have already achieved <strong>strong global reach</strong>. Products are shipped worldwide, 
+                    and advertising does not seem to significantly change performance in this dataset. This suggests that Wish is already in 
+                    a <strong>mature stage</strong>, where organic visibility and price positioning play a bigger role than paid promotion.
+                </p>
+                <p class="next-steps">
+                    <strong>Next Steps:</strong> a natural extension of this project would be to add predictive models for demand, 
+                    or to build customer and product segments to support more targeted strategies.
+                </p>
+            </section>
+            
+            <section class="analysis-section">
+                <h3>Recommendations</h3>
+                <ul>
+                    <li><strong>Expand express shipping</strong> to regions outside China to improve delivery speed and user experience.</li>
+                    <li><strong>Diversify product origins</strong> to include more non-Chinese manufacturers and increase perceived quality and trust.</li>
+                    <li><strong>Introduce local warehouses</strong> in major regions (e.g. Europe, North America) to reduce shipping times and costs.</li>
+                    <li><strong>Add clearer product categories</strong> instead of relying only on keyword search, improving navigation for new users.</li>
+                </ul>
+            </section>
+
+            <section class="analysis-section">
+                <h3>Interactive Dashboard</h3>
+                <p>
+                    Explore the full analysis through the interactive Power BI dashboard below.  
+                    The report summarises merchant reliability, price ranges, global reach, and the impact of advertising.
+                </p>
+
+                <div class="powerbi-embed">
+                    <iframe
+                        title="Wish Summer Products 2020 Dashboard"
+                        width="100%"
+                        height="800"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiN2JhNjcxYWItMTZjZi00NGVmLTk2MWEtYjk0NzI5NTk3NmY4IiwidCI6IjJhZjUzNDlhLTc1MTktNDgyNy1iYjUwLTI2ZTVhMzQxNzcwYSIsImMiOjl9"
+                        frameborder="0"
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+            </section>
+
+            <div class="analysis-footer">
+                <a href="../index.html" class="back-link">← Back to all analyses</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bulendre.org™. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
