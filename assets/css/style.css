@@ -591,7 +591,7 @@ main {
 .insights-list li {
     position: relative;
     padding: var(--spacing-md);
-    padding-left: var(--spacing-xl);
+    padding-left: calc(var(--spacing-md) + 1.75rem);
     margin-bottom: var(--spacing-md);
     background-color: var(--color-background-alt);
     border-radius: var(--border-radius-sm);
@@ -981,3 +981,4 @@ footer p {
         text-decoration: underline;
     }
 }
+
