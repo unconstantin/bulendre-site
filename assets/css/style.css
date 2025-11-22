@@ -207,14 +207,13 @@ nav a.active {
     .header-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: var(--spacing-md);
+        gap: 0.4rem; /* mult mai mic decât spacing-md (1.5rem) */
     }
 
     nav {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm); /* puțin mai apropiate între ele */
     }
 }
-
 
 
 /* ========================================
@@ -830,7 +829,7 @@ footer p {
     }
 
     header {
-        padding: var(--spacing-md) 0;
+        padding: 0.5 rem 0 0;
     }
 
     .brand h1 {
@@ -983,6 +982,7 @@ footer p {
         text-decoration: underline;
     }
 }
+
 
 
 
