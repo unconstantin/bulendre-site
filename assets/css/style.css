@@ -461,7 +461,7 @@ main {
    CONTACT GRID
    ======================================== */
 
-   .brand-link {
+.brand-link {
     display: inline-block;
 }
 
@@ -528,6 +528,12 @@ main {
     margin-bottom: var(--spacing-xl);
 }
 
+.analysis-subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
 .tags-row {
     display: flex;
     flex-wrap: wrap;
@@ -581,6 +587,7 @@ main {
     padding-left: 0;
 }
 
+/* card standard pentru toate insight-urile */
 .insights-list li {
     position: relative;
     padding: var(--spacing-md);
@@ -601,6 +608,82 @@ main {
     font-weight: 700;
     font-size: 1.125rem;
 }
+
+/* ---------- INSIGHT CU CHART ---------- */
+
+/* folosim aceeași casetă ca restul; .insight-core doar organizează text + buton */
+.insight-with-chart .insight-core {
+    padding-left: 0;       /* nu mai adăugăm extra padding în interior */
+}
+
+/* nu vrem bifa și linia albastră pe .insight-core, rămân pe <li> */
+.insight-core::before {
+    content: none;
+}
+
+/* butonul de toggle */
+.insight-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: var(--spacing-xs);
+}
+
+.insight-toggle:hover {
+    background-color: var(--color-background-alt);
+    border-color: var(--color-primary);
+}
+
+.insight-toggle .toggle-icon {
+    font-size: 0.9rem;
+    transition: transform 0.25s ease;
+}
+
+.insight-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* panoul cu chart – tot în interiorul aceleiași casete */
+.insight-chart-panel {
+    padding-top: 0;  /* fără spațiu când e ascuns */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform-origin: top;
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        padding-top 0.3s ease;
+}
+
+.insight-chart-panel.is-open {
+    max-height: 700px; /* suficient pentru imagine */
+    opacity: 1;
+    padding-top: var(--spacing-sm); /* spațiu doar când se vede poza */
+}
+
+.insight-chart-panel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ----------------------------------------------- */
+
+
+/* ----------------------------------------------- */
 
 .next-steps {
     background-color: rgba(37, 99, 235, 0.05);
