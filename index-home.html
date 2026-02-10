@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulendre - Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="/assets/B-logo.svg" type="image/svg+xml">
+    <script>
+    if (location.pathname.endsWith("index.html")) {
+        location.replace("/");
+    }
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+    <a href="/" class="brand-link">
+        <img src="assets/logo.svg" alt="bulendre" class="brand-logo">
+    </a>
+    <p class="subtitle">They're just clothes. Let's look at the data.</p>
+</div>
+
+
+                <nav>
+                    <a href="/" class="active">Home</a>
+                    <a href="about/">About</a>
+                    <a href="contact/">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Recent Analyses</h2>
+            <p class="hero-subtitle">Exploring datasets and uncovering actionable insights</p>
+        </section>
+
+        <section class="analyses-grid">
+            <!-- Cardul întreg este acum clicabil -->
+            <a href="analyses/wish-cheap-go-global/" class="analysis-card-link">
+                <article class="analysis-card">
+                    <div class="card-header">
+                        <span class="tag">Python</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">E-commerce</span>
+                    </div>
+
+                    <h3>Wish: Can Cheap Go Global?</h3>
+                    <span class="date">November 2025</span>
+
+                    <p class="description">
+                        Analysis of Wish's summer 2020 products to understand how low prices,
+                        product quality, and global reach influence customer behavior and sales performance.
+                    </p>
+
+                    <span class="read-more">Read analysis →</span>
+                </article>
+            </a>
+
+            <!-- Când mai adaugi proiecte, duplică structura <a> ... </a> de mai sus -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bulendre.org™. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
