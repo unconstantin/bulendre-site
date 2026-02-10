@@ -196,11 +196,12 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 nav {
-    margin-right: 5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
 }
 
 @media (max-width: 480px) {
@@ -265,6 +266,8 @@ nav a {
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    min-width: 5.5rem;
 }
 
 nav a:hover {
@@ -284,12 +287,23 @@ nav a.active {
     }
     
     nav {
-        gap: 3.5rem;
+        gap: 1.5rem;
+        margin-right: 2rem;
     }
     
-    /* Contact aligns with page content edge */
-    nav a:last-child {
-        margin-right: calc(-1 * var(--spacing-sm));
+    nav a {
+        padding: var(--spacing-xs) 0.6rem;
+    }
+}
+
+/* Medium screens — hide motto only when truly no space */
+@media (max-width: 860px) and (min-width: 641px) {
+    .subtitle {
+        display: none;
+    }
+    
+    nav {
+        gap: 1rem;
     }
 }
 
@@ -408,6 +422,7 @@ main {
 .hero {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
 }
 
 .hero h2 {
@@ -607,6 +622,44 @@ main {
 
 .analysis-card-link:hover .read-more {
     transform: translateX(6px);
+}
+
+/* ========================================
+   COMING SOON CARD
+   ======================================== */
+
+.coming-soon-wrapper {
+    cursor: default;
+    pointer-events: none;
+}
+
+.coming-soon-card {
+    opacity: 0.55;
+    border-style: dashed;
+    border-color: var(--color-border);
+}
+
+.coming-soon-card::before {
+    display: none;
+}
+
+.coming-soon-card::after {
+    display: none;
+}
+
+.coming-soon-card .tag {
+    background-color: rgba(107, 114, 128, 0.1);
+    color: var(--color-text-light);
+}
+
+.coming-soon-card h3 {
+    color: var(--color-text-light);
+}
+
+.coming-soon-label {
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-style: italic;
 }
 
 /* ========================================
@@ -987,12 +1040,13 @@ main {
 footer {
     background-color: var(--color-background);
     border-top: 1px solid var(--color-border);
-    padding: var(--spacing-lg) 0;
+    padding: 0.6rem 0;
     text-align: center;
+    margin-top: auto;
 }
 
 footer p {
-    color: var(--color-text-light);
+    color: var(--color-text);
     font-size: 0.875rem;
     margin: 0;
 }
@@ -1432,12 +1486,10 @@ footer p {
 }
 
 .contact-content {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-left: 1px solid rgba(229, 231, 235, 0.6);
-    border-right: 1px solid rgba(229, 231, 235, 0.6);
-    border-top: none;
-    border-bottom: none;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
     box-shadow: none;
     display: flex;
     flex-direction: column;
@@ -1445,12 +1497,6 @@ footer p {
     flex: 1;
     width: 100%;
     padding: var(--spacing-2xl);
-    
-    /* All corners rounded to blend smoothly */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 /* Contact Header */
@@ -1678,28 +1724,18 @@ footer p {
    ======================================== */
 
 .about-page {
-    /* Match Contact's content panel width + feel */
+    /* Match Home page width feel */
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: var(--spacing-2xl);
     overflow-x: hidden;
 
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    backdrop-filter: none;
 
     border: none;
-    border-left: 1px solid rgba(229, 231, 235, 0.6);
-    border-right: 1px solid rgba(229, 231, 235, 0.6);
-    border-top: none;
-    border-bottom: none;
-    
-    /* Only bottom corners rounded */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-
+    border-radius: 0;
     box-shadow: none;
 }
 
