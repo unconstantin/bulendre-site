@@ -764,9 +764,9 @@ main {
 }
 
 .analysis-header {
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-xl);
-    border-bottom: 2px solid var(--color-border-light);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 .tags-row {
@@ -787,6 +787,123 @@ main {
     color: var(--color-text-light);
     margin-bottom: var(--spacing-md);
     line-height: 1.6;
+}
+
+/* Executive goal line under the analysis title */
+.analysis-goal {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.65;
+    max-width: 60rem;
+}
+
+/* Dataset compact card (Contact-style) */
+.dataset-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.dataset-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.dataset-card h3 {
+    margin-bottom: 0.35rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dataset-lead {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: 1.65;
+}
+
+.dataset-facts {
+    margin-top: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.dataset-fact {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 0.85rem;
+}
+
+.fact-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.fact-value {
+    display: block;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.35;
+}
+
+.fact-value a{
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.fact-value a:hover{
+    text-decoration-thickness: 2px;
+}
+
+/* Better presentation for engineered features list */
+.feature-grid{
+    margin-top: var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-sm);
+}
+
+@media (max-width: 900px){
+    .feature-grid{ grid-template-columns: 1fr; }
+}
+
+.feature-item{
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--border-radius-sm);
+    padding: 0.85rem 0.9rem;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.feature-title{
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+}
+
+.feature-desc{
+    color: var(--color-text-light);
+    line-height: 1.6;
+    font-size: 0.98rem;
+}
+
+
+@media (max-width: 900px) {
+    .dataset-facts {
+        grid-template-columns: 1fr;
+    }
 }
 
 .analysis-section {
@@ -1800,6 +1917,7 @@ footer p {
 
 .about-intro {
     margin-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
 }
 
 .about-lead {
@@ -1969,7 +2087,7 @@ footer p {
 /* Skill cards (About) - logos + per-skill themes */
 .skill-flip {
     /* override default flip-card height for bullets */
-    height: 340px;
+    height: 370px;
 
     /* default theme vars (overwritten per skill) */
     --skill-border: rgba(37, 99, 235, 0.18);
@@ -2151,5 +2269,220 @@ footer p {
 @media (max-width: 900px) {
     .skills-flip-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   DATASET CARD — inline variant (no gap)
+   ======================================== */
+
+.dataset-card--inline {
+    margin-top: var(--spacing-lg);
+}
+
+/* Dataset flat variant — no outer box, h3 styled like section headings */
+.dataset-card--flat {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    margin-top: var(--spacing-lg);
+}
+
+.dataset-card--flat:hover {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.dataset-card--flat h3 {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-border-light);
+}
+
+/* Source link: black normal-weight text */
+.fact-value--link {
+    font-weight: 600;
+}
+
+.fact-value--link a {
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.fact-value--link a:hover {
+    color: var(--color-primary);
+}
+
+/* ========================================
+   CONCLUSIONS — Scannable Card Grid
+   ======================================== */
+
+.conclusions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.conclusion-card {
+    padding: var(--spacing-md) var(--spacing-md);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.25s ease;
+}
+
+.conclusion-card:hover {
+    border-color: rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+.conclusion-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.conclusion-card p {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .conclusions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   NEXT STEPS — Modern Card
+   ======================================== */
+
+.next-steps-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.04) 0%, rgba(139, 92, 246, 0.04) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.next-steps-card:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: var(--shadow-sm);
+}
+
+.next-steps-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.next-steps-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+}
+
+.next-steps-body p {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+    .next-steps-card {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   CTA — Access to Project Materials
+   ======================================== */
+
+.cta-materials {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-materials-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.cta-materials-inner:hover {
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow: var(--shadow-md);
+}
+
+.cta-materials-icon {
+    flex-shrink: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+}
+
+.cta-materials-text strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+}
+
+.cta-materials-text p {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.cta-materials-text a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.cta-materials-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .cta-materials-inner {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
     }
 }
