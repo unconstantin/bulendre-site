@@ -50,6 +50,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: scroll; /* always show scrollbar to prevent layout shift */
 }
 
 body {
@@ -1474,15 +1475,7 @@ footer p {
     padding: 0;
     flex: 1;
     display: flex;
-}
-
-.contact-main .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-    display: flex;
-    flex: 1;
+    flex-direction: column;
 }
 
 .contact-content {
@@ -1496,7 +1489,7 @@ footer p {
     justify-content: center;
     flex: 1;
     width: 100%;
-    padding: var(--spacing-2xl);
+    padding: 0;
 }
 
 /* Contact Header */
@@ -1724,16 +1717,15 @@ footer p {
    ======================================== */
 
 .about-page {
-    /* Match Home page width feel */
+    /* Match Home page layout */
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: var(--spacing-2xl);
+    padding: 0;
     overflow-x: hidden;
 
     background: transparent;
     backdrop-filter: none;
-
     border: none;
     border-radius: 0;
     box-shadow: none;
